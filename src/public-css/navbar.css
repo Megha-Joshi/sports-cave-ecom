@@ -1,0 +1,56 @@
+.container {
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+    width: 28rem;
+    height: 3rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 1.8rem;
+    padding: 10px;
+}
+
+.search-box:focus {
+    border: 1px solid var(--accent-color);
+}
+
+.badge {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 100%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    right: 0;
+    color: var(--bg-color);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Override Component Library */
+
+.header {
+    gap: 10rem;
+    padding: var(--container-padding);
+}
+
+.right-nav {
+    height: 0rem;
+    align-content: center;
+}
+
+.btn {
+    margin: 10px;
+    padding: 0.7rem;
+    min-width: 6.25rem;
+    cursor: pointer;
+}
+
+.btn-round {
+    border-radius: 1.8rem;
+}
+
+.btn-only-icon {
+    min-width: 0px;
+}
