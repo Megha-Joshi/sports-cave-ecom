@@ -1,3 +1,5 @@
+@import url("https://ozone-ui-library.netlify.app/styles.css");
+
 .sports-flex {
     display: flex;
     gap: 2rem;
