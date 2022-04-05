@@ -43,7 +43,7 @@ const WishList = () => {
                     </div>
                     <div class="card-footer">
                         <button class="btn btn-text btn-info"><a href="./cart.html" class="solid-btn-color">Move to Cart</a></button>
-                        <button class="btn btn-no-bg btn-text">Remove <i class="fa-solid fa-heart wish-icon"></i></button>
+                        <button class="btn btn-no-bg btn-text">Remove <i class="fas fa-heart wish-icon"></i></button>
                     </div>
                 </article>
             </div>
@@ -59,7 +59,7 @@ const WishList = () => {
                     <div class="card-footer">
                         <button class="btn btn-text btn-info"><a href="./cart.html" class="solid-btn-color">Move to Cart</a></button>
                         <div>
-                            <button class="btn btn-no-bg btn-text">Remove <i class="fa-solid fa-heart wish-icon"></i></button>
+                            <button class="btn btn-no-bg btn-text">Remove <i class="fas fa-heart wish-icon"></i></button>
                     </div>
                     </div>
                 </article>
@@ -75,7 +75,7 @@ const WishList = () => {
                     </div>
                     <div class="card-footer">
                         <button class="btn btn-text btn-info"><a href="./cart.html" class="solid-btn-color">Move to Cart</a></button>
-                        <button class="btn btn-no-bg btn-text">Remove <i class="fa-solid fa-heart wish-icon"></i></button>
+                        <button class="btn btn-no-bg btn-text">Remove <i class="fas fa-heart wish-icon"></i></button>
                     </div>
                 </article>
             </div>
@@ -90,7 +90,7 @@ const WishList = () => {
                     </div>
                     <div class="card-footer">
                         <button class="btn btn-text btn-info"><a href="./cart.h/cart.html" class="solid-btn-color"></a>Move to Cart</button>
-                        <button class="btn btn-no-bg btn-text">Remove <i class="fa-solid fa-heart wish-icon"></i></button>
+                        <button class="btn btn-no-bg btn-text">Remove <i class="fas fa-heart wish-icon"></i></button>
                     </div>
                 </article>
             </div>
