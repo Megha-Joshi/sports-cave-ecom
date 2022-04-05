@@ -1,0 +1,6 @@
+@import url("https://ozone-ui-library.netlify.app/styles.css");
+
+.check-pass{
+    display: flex;
+    justify-content: space-between;
+}
