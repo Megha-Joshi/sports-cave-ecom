@@ -108,6 +108,7 @@
 .hz-card {
     width: 55%;
     flex-basis: 20rem;
+    padding: 10px;
 }
 
 .card-content {
