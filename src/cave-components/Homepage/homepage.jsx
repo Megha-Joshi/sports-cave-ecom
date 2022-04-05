@@ -1,4 +1,4 @@
-import "./homePage.css";
+import "./homepage.css";
 import "../../public-css/navbar.css";
 import "../../public-css/root.css";
 
