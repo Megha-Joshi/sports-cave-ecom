@@ -29,6 +29,7 @@
     color: var(--accent-color);
     text-decoration: underline;
     cursor: pointer;
+    font-weight: 900;
 }
 
 .btn-no-bg:hover {
