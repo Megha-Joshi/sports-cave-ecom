@@ -20,9 +20,13 @@ return (
     <div class="cart-container">
         <div class="cart-card-container justify-align">
             {cartState.cart.map((item) =>
-            <article class="card hz-card">
+            <article class="card hz-card image-overlay">
                 <div class="horizontal-flex">
                     <img src={item.imgSrc} alt={item.title} class="cart-card-img" />
+                    <div className="card-cart-rating">
+                            <div>{item.rating}</div>
+                            <span><i class="fad fa-star filled"></i></span>
+                        </div>
                     <div class="card-content justify-align">
                         <p class="card-text">{item.title}</p>
                         <h3 class="card-head">₹1,304.1 <span class="sm-text discount">{item.price}</span></h3>
@@ -65,7 +69,9 @@ return (
             </div>
             <div class="line w-800"></div>
             <p>You will save ₹ {discountPrice} on this order.</p>
+            <Link to="/">
             <button class="btn btn-text btn-primary">PLACE ORDER</button>
+            </Link>
         </div>
     </div>
 </div>

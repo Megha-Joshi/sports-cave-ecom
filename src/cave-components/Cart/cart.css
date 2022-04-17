@@ -118,3 +118,14 @@
 .card-head {
     margin: 5px;
 }
+
+.card-cart-rating{
+    display: flex;
+    position: absolute;
+    top: 80%;
+    left: 12rem;
+    background-color: var(--box-color);
+    padding: 5px;
+    grid-gap: 2px;
+    gap: 2px;
+}
