@@ -1,11 +1,11 @@
 import "./App.css";
 import logo from "./logo.png";
-import { Homepage } from "./cave-components/Homepage/homepage";
+import { Products } from "./cave-components/Products/products";
 
 function App() {
   return (
     <div className="App">
-      <Homepage />
+      <Products />
     </div>
   );
 }
