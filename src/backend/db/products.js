@@ -9,7 +9,6 @@ export const products = [
   {
     _id: uuid(),
     title: "Willow Cricket Bat",
-    // author: "Shiv Khera",
     price: "1499",
     categoryName: "Cricket",
     imgSrc: "../images/cricket_bats.jpg",
@@ -19,7 +18,6 @@ export const products = [
   {
     _id: uuid(),
     title: "RCB Jersey",
-    // author: "Junaid Qureshi",
     price: "1200",
     categoryName: "Cricket",
     imgSrc: "../images/ipl-jersey.jpg",
@@ -29,7 +27,6 @@ export const products = [
   {
     _id: uuid(),
     title: "RDX Black Shine Guard",
-    // author: "Shiv Khera",
     price: "1899",
     categoryName: "Football",
     imgSrc: "../images/shin_guards.jpg",
@@ -39,7 +36,6 @@ export const products = [
   {
     _id: uuid(),
     title: "Badminton Racquet",
-    // author: "Shiv Khera",
     price: "1899",
     categoryName: "Badminton",
     imgSrc: "../images/badminton_racquet.jpg",
@@ -49,7 +45,6 @@ export const products = [
   {
     _id: uuid(),
     title: "Basketball Backboard",
-    // author: "Shiv Khera",
     price: "410",
     categoryName: "Basketball",
     imgSrc: "../images/backboards_basketball.jpg",
@@ -59,7 +54,6 @@ export const products = [
   {
     _id: uuid(),
     title: "Tennis Racquet with balls",
-    // author: "Shiv Khera",
     price: "999",
     categoryName: "Tennis",
     imgSrc: "../images/tennis_racquet.jpg",

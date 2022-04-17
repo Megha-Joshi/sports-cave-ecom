@@ -11,10 +11,9 @@ return (
     </div>
     <h3 className="footer-heading"><i>The best sports are played with best sports goods!!</i></h3>
     <p className="footer-heading">© 2020 Copyright: meghajoshi</p>
-
   </footer>
 </div>
 );
-}
+};
 
 export { Footer };

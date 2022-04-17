@@ -28,7 +28,7 @@ return (
             <div className="img-category">
                 <img src="../images/all-products.jpg" alt="Cricket" className="box" />
                 <Link to="/products">
-                <button className="btn-info-outline btn btn-text">ALL PRODUCTS</button>
+                <button className="btn-info-outline btn btn-text products-btn-color">ALL PRODUCTS</button>
                 </Link>
             </div>
             </Link>

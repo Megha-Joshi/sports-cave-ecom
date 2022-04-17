@@ -33,11 +33,26 @@
     color: var(--accent-color);
 }
 
+.outline-btn-color:hover {
+    background-color: var(--bg-color);
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.products-btn-color {
+    color: var(--accent-color);
+}
+
+.products-btn-color:hover {
+    background-color: var(--bg-color);
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
 .btn-info-outline:hover {
     background-color: var(--bg-color);
     text-decoration: underline;
 }
-
 
 .items-color {
     color: var(--font-color);
@@ -56,6 +71,12 @@
 }
 
 .login-color {
+    color: var(--secondary-color);
+}
+
+.login-color:hover {
+    background-color: var(--bg-color);
+    text-decoration: underline;
     color: var(--secondary-color);
 }
 
