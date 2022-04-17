@@ -44,7 +44,7 @@ return (
                                 payload: item})}>Remove From Cart</button>
                             {wishState.wishlist.find((wishItem) => wishItem._id === item._id) ?
                             <Link to="/wishList">
-                            <button class="btn btn-text btn-info-outline">Go to Wishlist</button>
+                            <button class="btn btn-text btn-info-outline outline-btn-color">Go to Wishlist</button>
                             </Link> : <button class="btn btn-text btn-info-outline outline-btn-color">Move to Wishlist</button>}
                         </div>
                     </div>
