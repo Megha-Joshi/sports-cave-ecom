@@ -10,7 +10,6 @@ const initValue = {
     categoryFilter: [],
     ratingFilter: 1,
     sortByFilter: "",
-    search: "",
     showData: [],
     realData: [],
 }
@@ -32,7 +31,6 @@ const filterFunction = (filterState, action) => {
                     categoryFilter: [],
                     ratingFilter: 1,
                     sortByFilter: "",
-                    search: filterState.search,
                     showData: filterState.realData,
                     realData: filterState.realData,
             };
@@ -73,12 +71,6 @@ const filterFunction = (filterState, action) => {
                     ...filterState,
                     ratingFilter: action.payload,
                 };
-            case "SEARCH":
-                return {
-                    ...filterState,
-                    search: action.payload,
-                };
-
             default:
                 return filterState;
     }

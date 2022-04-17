@@ -1,18 +1,22 @@
-.card{
+.card {
     height: 28rem;
 }
-.card-head{
+
+.card-head {
     text-align: center;
 }
-.card-text{
+
+.card-text {
     text-align: center;
     color: var(--accent-color);
 }
-.card-img{
+
+.card-img {
     width: 25rem;
     height: 18.75rem;
 }
-.card-rating{
+
+.card-rating {
     display: flex;
     position: absolute;
     top: 60%;
@@ -22,10 +26,11 @@
     gap: 2px;
 }
 
-.filled{
+.filled {
     color: var(--warning-color);
 }
-.card-ecom{
+
+.card-ecom {
     display: flex;
     flex-direction: row;
     background-color: var(--box-color);

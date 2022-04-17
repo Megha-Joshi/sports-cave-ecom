@@ -21,7 +21,7 @@ return (
             </div>
             <div class="right-navbar">
                 <Link to="/login">
-                <button className="btn-secondary-outline btn-text no-margin btn-login">Login</button>
+                <button className="btn-secondary-outline btn-text no-margin btn-login login-color">Login</button>
                 </Link>
                 <Link to="/wishlist">
                 <div class="badge-item">

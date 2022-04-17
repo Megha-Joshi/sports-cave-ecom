@@ -3,9 +3,8 @@
 }
 
 .filter {
-    height: 600px;
+    height: 37.5rem;
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.1);
-    padding: var(--container-padding);
     overflow-y: scroll;
 }
 
@@ -61,10 +60,10 @@
 
 .disp-new-line {
     display: block;
-    margin: 1rem
+    margin: 1rem;
 }
 
-.card-ecom{
+.card-ecom {
     display: flex;
     flex-direction: row;
     background-color: var(--box-color);
@@ -79,3 +78,6 @@
     flex-wrap: wrap;
 }
 
+.btn {
+    padding: 0.5rem;
+}

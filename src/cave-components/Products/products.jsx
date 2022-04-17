@@ -94,7 +94,7 @@ return showData.filter(
                                 <div className="card-rating">
                                     <div>{item.rating}</div>
                                     <span><i class="fad fa-star filled"></i></span>
-                                    </div>
+                                </div>
                                 <div>
                                     <h3 class="card-head">{item.title}</h3>
                                     <p class="card-text">₹ {item.price}</p>
@@ -108,9 +108,9 @@ return showData.filter(
                                     "Add_to_cart", payload: item})}>Add to Cart</button>
                                 }
                                 {wishState.wishlist.find((wishItem) => wishItem._id === item._id) ?
-                                <Link to="/wishlist">
-                                <button class="btn btn-text btn-info-outline">Go to Wishlist</button>
-                                </Link> : <button class="btn btn-text btn-info-outline" onClick={()=>
+                                <Link to="/wishlist" className="outline-btn-color">
+                                <button class="btn btn-text btn-info-outline outline-btn-color">Go to Wishlist</button>
+                                </Link> : <button class="btn btn-text btn-info-outline outline-btn-color" onClick={()=>
                                     wishDispatch({type: "Add_to_wishlist", payload: item})}>Wishlist</button>
                                 }
                             </div>
