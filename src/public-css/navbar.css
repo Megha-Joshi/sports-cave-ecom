@@ -44,7 +44,6 @@
     gap: 10rem;
     padding: var(--container-padding);
     font-size: 1.625rem;
-
 }
 
 .right-navbar {
@@ -73,4 +72,3 @@
 .badge{
     margin: 1rem 2rem 0rem 0rem ;
 }
-

@@ -1,6 +1,5 @@
 import { useFilter } from "../../Context/filterContext";
 import "../Products/products.css"
-// import "./filter.css";
 
 const Filter = () => {
 const { filterState, filterDispatch } = useFilter();
@@ -110,3 +109,4 @@ return (
 }
 
 export { Filter };
+
