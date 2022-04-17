@@ -10,31 +10,31 @@ const { cartState } = useCart();
 
 return (
 <div className="App">
-    <div className="container">
-        <nav className="nav-header justify-align">
+    <div class="container">
+        <nav class="nav-header justify-align">
             <Link to="/">
-            <div className="left-nav">SPORTS CAVE
+            <div class="left-nav">SPORTS CAVE
             </div>
             </Link>
             <div>
-                <input type="text" placeholder="Search" name="search" className="search-box" />
+                <input type="text" placeholder="Search" name="search" class="search-box" />
             </div>
-            <div className="right-navbar">
+            <div class="right-navbar">
                 <Link to="/login">
                 <button className="btn-secondary-outline btn-text no-margin btn-login">Login</button>
                 </Link>
                 <Link to="/wishlist">
-                <div className="badge-item">
-                    <button className="btn btn-only-icon no-margin">
-                        <i className="far fa-heart fa-2x"></i></button>
-                    <div className="badge red-circle">{wishState.wishlist.length}</div>
+                <div class="badge-item">
+                    <button class="btn btn-only-icon no-margin">
+                        <i class="far fa-heart fa-2x"></i></button>
+                    <div class="badge red-circle">{wishState.wishlist.length}</div>
                 </div>
                 </Link>
                 <Link to="/cart">
-                <div className="badge-item">
-                    <button className="btn btn-only-icon no-margin">
-                        <i className="far fa-shopping-cart fa-2x"></i></button>
-                    <div className="badge red-circle">{cartState.cart.length}</div>
+                <div class="badge-item">
+                    <button class="btn btn-only-icon no-margin">
+                        <i class="far fa-shopping-cart fa-2x"></i></button>
+                    <div class="badge red-circle">{cartState.cart.length}</div>
                 </div>
                 </Link>
             </div>
