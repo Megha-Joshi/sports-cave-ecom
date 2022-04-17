@@ -1,0 +1,70 @@
+@import url("https://ozone-ui-library.netlify.app/styles.css");
+
+.page-container {
+    display: flex;
+}
+
+.filter {
+    width: 23%;
+    height: 600px;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    padding: var(--ontainer-padding);
+    overflow-y: scroll;
+}
+
+.filter-head {
+    display: flex;
+    gap: var(--container-gap);
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.filter-heading {
+    margin: var(--container-margin);
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.range-category {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 92%;
+}
+
+.range-number {
+    margin: 0px 0px 1px 1rem;
+
+}
+
+.price-range {
+    width: 90%;
+    margin: 0px 0px 1px 1rem;
+    padding-top: 1px;
+}
+
+.product-container {
+    margin: var(--container-margin);
+    width: 77%;
+    padding: 10px;
+}
+
+.product-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--container-gap);
+}
+
+
+.page-container {
+    display: flex;
+    gap: var(--content-padding);
+    margin-bottom: 2.5rem;
+}
+
+
+.disp-new-line {
+    display: block;
+    margin: 1rem
+}
