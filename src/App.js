@@ -1,12 +1,12 @@
 import "./App.css";
-import { Homepage } from "./cave-components/Homepage/homePage";
+import { WishList } from "./cave-components/Wishlist/wishlist";
 import logo from "./logo.png";
 import { Cart } from "./cave-components/Cart/cart";
 
 function App() {
   return (
     <div className="App">
-      <Cart />
+      <WishList/>
     </div>
   );
 }
