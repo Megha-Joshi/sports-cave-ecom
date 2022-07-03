@@ -2,19 +2,14 @@ import "../../public-css/navbar.css";
 import "../../public-css/root.css";
 import "./homepage.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useFilter } from "../../Context/filterContext";
 import { Navbar } from "../Navbar/navbar";
 import { Footer } from "../Footer/footer";
+import { useProduct } from "../../Context/productsContext";
 
 const Homepage = () => {
-const [category, setCategory] = useState([]);
 const { filterDispatch } = useFilter();
-useEffect(()=>{
-axios.get("/api/categories")
-.then(response =>{setCategory(response.data.categories)})
-},[])
+const {productState } = useProduct();
 
 return (
 <div className="App">
@@ -32,7 +27,7 @@ return (
                 </Link>
             </div>
             </Link>
-            {category.map(item =>
+            {productState.categories.map(item =>
             <div class="img-category">
                 <img src={item.imgSrc} alt="Cricket" class="sport-img" />
                 <Link to="/products">

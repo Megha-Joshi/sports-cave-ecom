@@ -3,17 +3,18 @@ import "../../public-css/product-wishlist.css"
 import "./products.css";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { useCart } from "../../Context/cartContext";
-import { useWishlist } from "../../Context/wishlistContext";
 import { Filter } from "../Filter/filter";
 import { useFilter } from "../../Context/filterContext";
 import { Navbar } from "../Navbar/navbar";
+import { useProduct } from "../../Context/productsContext";
+import { useAuth } from "../../Context/authContext";
 
 const Products = () => {
 
-const { filterState, filterDispatch, products } = useFilter();
-const { wishState, wishDispatch } = useWishlist();
-const { cartState, cartDispatch } = useCart();
+const { filterState, filterDispatch} = useFilter();
+const { productState, addItemToCart, addItemToWishlist, removeItemFromWishlist} = useProduct();
+const {token} = useAuth();
+const { products } = productState;
 
 useEffect(() => {
 filterState.showData.length === 0 &&
@@ -77,6 +78,12 @@ return showData.filter(
     );
     return sortByPriceRangeData;
     };
+
+    const wishlistHandler = (token, item) =>{
+        productState.wishlist.find((wishItem) => wishItem._id === item._id) ?
+        removeItemFromWishlist(item._id, token) :
+        addItemToWishlist(token, item);
+    }
     return (
     <div className="App">
         <Navbar />
@@ -91,6 +98,7 @@ return showData.filter(
                         <article class="card image-overlay">
                             <div class="card-body">
                                 <img src={item.imgSrc} alt="Card Image" class="card-img" />
+                                <span className="like-btn" onClick={() => wishlistHandler(token ,item)}><i className = { productState.wishlist.find((wishItem) => wishItem._id === item._id) ? "fas fa-heart red-like": "far fa-heart red-like"}></i></span>
                                 <div className="card-rating">
                                     <div>{item.rating}</div>
                                     <span><i class="fad fa-star filled"></i></span>
@@ -101,17 +109,10 @@ return showData.filter(
                                 </div>
                             </div>
                             <div class="card-footer">
-                                {cartState.cart.find((cartItem) => cartItem._id===item._id) ?
+                                {productState.cart.find((cartItem) => cartItem._id===item._id) ?
                                 <Link to="/cart">
                                 <button class="btn btn-text btn-info">Go to Cart</button>
-                                </Link> : <button class="btn btn-text btn-info" onClick={()=> cartDispatch({type:
-                                    "Add_to_cart", payload: item})}>Add to Cart</button>
-                                }
-                                {wishState.wishlist.find((wishItem) => wishItem._id === item._id) ?
-                                <Link to="/wishlist" className="outline-btn-color">
-                                <button class="btn btn-text btn-info-outline outline-btn-color">Go to Wishlist</button>
-                                </Link> : <button class="btn btn-text btn-info-outline outline-btn-color" onClick={()=>
-                                    wishDispatch({type: "Add_to_wishlist", payload: item})}>Wishlist</button>
+                                </Link> : <button class="btn btn-text btn-info" onClick={() => addItemToCart(token, item)}>Add to Cart</button>
                                 }
                             </div>
                         </article>

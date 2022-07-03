@@ -55,7 +55,6 @@
 .page-container {
     display: flex;
     gap: var(--content-padding);
-    margin-bottom: 2.5rem;
 }
 
 .disp-new-line {
@@ -73,7 +72,6 @@
     margin: var(--container-margin);
     padding: var(--container-padding);
     width: 20rem;
-    height: 20%;
     gap: var(--container-gap);
     flex-wrap: wrap;
 }
