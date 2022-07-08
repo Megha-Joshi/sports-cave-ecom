@@ -4,14 +4,14 @@
     margin-top: 3rem;
     gap: var(--container-gap);
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .cart-card-container {
     display: flex;
     flex-wrap: wrap;
     gap: var(--container-gap);
-    flex-direction: column;
-    width: 60%;
+    width: 70%;
     margin-bottom: 1rem;
 }
 
@@ -33,6 +33,17 @@
     text-align: center;
 }
 
+.cart-card-rating {
+    display: flex;
+    position: absolute;
+    top: 58.5%;
+    right: 0;
+    background-color: var(--box-color);
+    padding: 5px;
+    gap: 2px;
+    color: var(--font-color);
+}
+
 .discount {
     text-decoration: line-through;
     color: gray;
@@ -46,7 +57,9 @@
 .quantity {
     display: flex;
     gap: 0.75rem;
-    margin: 8px;
+    margin: 10px;
+    justify-content: center;
+    color: var(--font-color);
 }
 
 .fal {
@@ -62,6 +75,7 @@
 
 .qnt-change {
     padding: 1px 3px;
+    cursor: pointer;
 }
 
 .qnt-product {
@@ -73,12 +87,12 @@
     flex-direction: column;
     gap: var(--container-gap);
     background-color: var(--box-color);
-    width: 25%;
     height: 25%;
     border-radius: var(--container-border-radius);
-    margin-right: 20px;
+    margin: 1.25rem 1.25rem 1.25rem 0;
     padding: var(--container-padding);
     justify-content: end;
+    color: var(--font-color);
 }
 
 .bill-items {
@@ -88,7 +102,7 @@
 
 .line {
     border-bottom: 2px solid var(--secondary-color);
-    min-width: 14.3rem;
+    min-width: 24%;
 }
 
 /* Override Component Library */
@@ -119,7 +133,7 @@
     margin: 5px;
 }
 
-.card-cart-rating{
+.card-cart-rating {
     display: flex;
     position: absolute;
     top: 80%;

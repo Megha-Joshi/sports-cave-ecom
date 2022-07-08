@@ -2,54 +2,58 @@ import "./cart.css";
 import "../../public-css/navbar.css";
 import "../../public-css/root.css";
 import { Link } from "react-router-dom";
-import { useCart } from "../../Context/cartContext"
-import { useWishlist } from "../../Context/wishlistContext";
 import { Navbar } from "../Navbar/navbar";
+import { useProduct } from "../../Context/productsContext";
+import { useAuth } from "../../Context/authContext";
 
 const Cart = () => {
-const { cartState, cartDispatch} = useCart();
-const { wishState, wishDispatch} = useWishlist();
-const initialPrice = cartState.cart.reduce((acc, item) => acc + Number(item.price) * Number(item.quantity),0);
+
+const { token } = useAuth();
+const { productState, productDispatch, removeItemFromCart, removeItemFromWishlist, addItemToWishlist } = useProduct();
+const initialPrice = productState.cart.reduce((acc, item) => acc + Number(item.price) * Number(item.quantity),0);
 const discountPrice = (10*initialPrice)/100;
 const totalPrice = initialPrice-discountPrice;
+
+const wishlistHandler = (token, item) =>{
+    productState.wishlist.find((wishItem) => wishItem._id === item._id) ?
+    removeItemFromWishlist(item._id, token) :
+    addItemToWishlist(token, item);
+}
 
 return (
 <div className="App">
     < Navbar />
-    <h1 class="title cart-title">My Cart <span>({cartState.cart.length})</span></h1>
+    <h1 class="title cart-title">My Cart <span>({productState.cart.length})</span></h1>
     <div class="cart-container">
         <div class="cart-card-container justify-align">
-            {cartState.cart.map((item) =>
-            <article class="card hz-card image-overlay">
-                <div class="horizontal-flex">
-                    <img src={item.imgSrc} alt={item.title} class="cart-card-img" />
-                    <div className="card-cart-rating">
-                            <div>{item.rating}</div>
-                            <span><i class="fad fa-star filled"></i></span>
-                        </div>
-                    <div class="card-content justify-align">
-                        <p class="card-text">{item.title}</p>
-                        <h3 class="card-head">₹1,304.1 <span class="sm-text discount">{item.price}</span></h3>
-                        <p class="card-text sm-text discount-item">10% OFF</p>
-                        <div class="quantity">
-                            <p class="sm-text">Quantity : </p>
-                            <button><i class="fal fa-plus qnt-change" onClick={()=> cartDispatch({type:
-                                    "Increase_quantity", payload: item})}></i></button>
-                            <div class="count qnt-product">{item.quantity}</div>
-                            <button><i class="fal fa-minus qnt-change" onClick={()=> cartDispatch({ type:
-                                    "Decrease_quantity", payload: item})}></i></button>
-                        </div>
-                        <div class="cart-card-footer">
-                            <button class="btn btn-text btn-info" onClick={()=> cartDispatch({type: "Remove_from_cart",
-                                payload: item})}>Remove From Cart</button>
-                            {wishState.wishlist.find((wishItem) => wishItem._id === item._id) ?
-                            <Link to="/wishList">
-                            <button class="btn btn-text btn-info-outline outline-btn-color">Go to Wishlist</button>
-                            </Link> : <button class="btn btn-text btn-info-outline outline-btn-color">Move to Wishlist</button>}
-                        </div>
+            {productState.cart.map((item) =>
+            <div class="card-ecom">
+            <article class="card image-overlay">
+                <div class="card-body">
+                    <img src={item.imgSrc} alt="Card Image" class="card-img" />
+                    <span className="like-btn" onClick={() => wishlistHandler(token ,item)}><i className = { productState.wishlist.find((wishItem) => wishItem._id === item._id) ? "fas fa-heart red-like": "far fa-heart red-like"}></i></span>
+                    <div className="cart-card-rating">
+                        <div>{item.rating}</div>
+                        <span><i class="fad fa-star filled"></i></span>
+                    </div>
+                    <div class="written">
+                    <h3 class="card-head">{item.title}</h3>
+                            <p class="card-text">₹ {item.price}</p>
+                    <div class="quantity">
+                        <p class="sm-text">Quantity : </p>
+                        <button><i class="fal fa-plus qnt-change" onClick={()=> productDispatch({type:
+                                "INCREASE_QUANTITY", payload: item})}></i></button>
+                        <div class="count qnt-product">{item.quantity}</div>
+                        <button><i class="fal fa-minus qnt-change" onClick={()=> productDispatch({ type:
+                                "DECREASE_QUANTITY", payload: item})}></i></button>
+                    </div>
                     </div>
                 </div>
-            </article>)}
+                <div class="card-footer">
+                <button class="btn btn-text btn-info" onClick={()=> removeItemFromCart(item._id, token)}>Remove From Cart</button>
+                </div>
+            </article>
+        </div>)}
         </div>
         <div class="cart-bill-container">
             <h3>PRICE DETAILS</h3>

@@ -1,12 +1,14 @@
 import "../../public-css/navbar.css";
 import { Link } from "react-router-dom";
-import { useCart } from "../../Context/cartContext";
-import { useWishlist } from "../../Context/wishlistContext";
+import { useProduct } from "../../Context/productsContext";
+import { useAuth } from "../../Context/authContext";
+import { useTheme } from "../../Context/themeContext";
 
 const Navbar = () =>{
 
-const { wishState } = useWishlist();
-const { cartState } = useCart();
+const { productState} = useProduct();
+const { token, logoutHandler, loginHandler } = useAuth();
+const {theme, setTheme } = useTheme();
 
 return (
 <div className="App">
@@ -20,23 +22,33 @@ return (
                 <input type="text" placeholder="Search" name="search" class="search-box" />
             </div>
             <div class="right-navbar">
-                <Link to="/login">
-                <button className="btn-secondary-outline btn-text no-margin btn-login login-color">Login</button>
-                </Link>
                 <Link to="/wishlist">
                 <div class="badge-item">
                     <button class="btn btn-only-icon no-margin">
                         <i class="far fa-heart fa-2x"></i></button>
-                    <div class="badge red-circle">{wishState.wishlist.length}</div>
+                    <div class="badge red-circle">{productState.wishlist.length}</div>
                 </div>
                 </Link>
                 <Link to="/cart">
                 <div class="badge-item">
                     <button class="btn btn-only-icon no-margin">
                         <i class="far fa-shopping-cart fa-2x"></i></button>
-                    <div class="badge red-circle">{cartState.cart.length}</div>
+                    <div class="badge red-circle">{productState.cart.length}</div>
                 </div>
                 </Link>
+                {token ? <button class="btn btn-only-icon no-margin" onClick={()=> logoutHandler()}>
+                    <i class="far fa-sign-out-alt fa-2x"></i></button> :
+                <Link to="/login">
+                <button className="btn btn-only-icon no-margin"><i class="far fa-sign-in-alt fa-2x"></i></button>
+                </Link>
+                }
+                {theme === "light" ? (
+                <button class="btn btn-only-icon no-margin" onClick={()=> setTheme("dark")}><i
+                        class="far fa-lightbulb-on fa-2x"></i></button>
+                ) : (
+                <button class="btn btn-only-icon no-margin" onClick={()=> setTheme("light")}><i
+                        class="far fa-lightbulb-slash fa-2x"></i></button>
+                )}
             </div>
         </nav>
     </div>

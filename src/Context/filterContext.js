@@ -3,7 +3,6 @@ import {
     useReducer,
     useContext, useState, useEffect
 } from "react";
-import axios from "axios";
 
 const initValue = {
     priceRangeFilter: 2000,
@@ -78,14 +77,8 @@ const filterFunction = (filterState, action) => {
 
 const FilterProvider = ({children}) => {
 
-    useEffect(()=>{
-        axios.get("/api/products")
-        .then(response => {setProducts(response.data.products)});
-        },[]);
-
-        const [products, setProducts] = useState([]);
-        const [filterState, filterDispatch] = useReducer(filterFunction, initValue)
-        return ( < FilterContext.Provider value = {{filterState,filterDispatch, products}} > {children} </FilterContext.Provider>)};
+    const [filterState, filterDispatch] = useReducer(filterFunction, initValue)
+    return ( < FilterContext.Provider value = {{filterState,filterDispatch}} > {children} </FilterContext.Provider>)};
 
 const useFilter = () => useContext(FilterContext);
 
