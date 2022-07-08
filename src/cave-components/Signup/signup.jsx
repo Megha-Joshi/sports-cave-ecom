@@ -34,7 +34,7 @@ return(
                 class="inputt-box title-content" value={userDetails.password} onChange={(e)=>
             setUserDetails({...userDetails, password: e.target.value})} required />
         </fieldset>
-        <label for="checkbox">
+        <label for="checkbox" className="inp-txt">
             <input type="checkbox" id="checkbox" name="checkbox" className="sign-check" /> I accept all Terms and
             Conditions</label>
         <div>

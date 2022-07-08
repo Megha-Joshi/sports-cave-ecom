@@ -89,7 +89,7 @@
     background-color: var(--box-color);
     height: 25%;
     border-radius: var(--container-border-radius);
-    margin: 1.25rem 1.25rem 1.25rem 0;
+    margin: 1.25rem;
     padding: var(--container-padding);
     justify-content: end;
     color: var(--font-color);

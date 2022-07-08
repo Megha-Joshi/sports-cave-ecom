@@ -79,3 +79,19 @@
 .btn {
     padding: 0.5rem;
 }
+
+@media screen and (max-width: 600px) {
+    .filter-section-hide{
+        display: none;
+    }
+
+    .product-container{
+        width: 100%;
+        text-align: center;
+        margin: 0rem;
+    }
+
+    .product-card-container{
+        justify-content: center;
+    }
+}

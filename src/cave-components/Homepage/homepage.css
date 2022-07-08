@@ -31,10 +31,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .hero-image {
-    margin-bottom: 1.25rem;
+    display: flex;
+    /* margin: 1.25rem; */
+    padding: var(--container-padding);
+    max-width: 100%;
+    background-color: var(--font-color);
+}
+
+.img-cont{
+    width: 33%;
+}
+
+.home-img{
+    width: 100%;
+    height: auto;
 }
 
 .cards-category {
@@ -82,4 +96,22 @@
 
 .left-nav:hover {
     color: var(--font-color);
+}
+
+@media screen and (max-width: 650px) {
+    .home-img{
+        height: 12rem;
+    }
+
+    .sports-flex{
+        margin: 3rem 0.625rem 3rem 0.625rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .left-nav{
+        font-weight: 500;
+        padding-left: 3px;
+        font-size: x-large;
+    }
 }

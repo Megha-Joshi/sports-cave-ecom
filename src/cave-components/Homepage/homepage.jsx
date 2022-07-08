@@ -16,7 +16,15 @@ return (
     <Navbar />
     <div class="body-container">
         <div class="hero-image">
-            <img src="./images/sport-latest.jpg" alt="sport" class="res-image" />
+        <div className="img-cont">
+            <img src="./images/grand-slam.svg" alt="sport" class="home-img" />
+            </div>
+            <div className="img-cont">
+            <img src="./images/basketball.svg" alt="sport" class="home-img" />
+            </div>
+            <div className="img-cont">
+            <img src="./images/goal.svg" alt="sport" class="home-img" />
+            </div>
         </div>
         <div class="sports-flex justify-align">
             <Link to="/products">
