@@ -34,6 +34,8 @@ Go to [Sports Cave](https://sports-cave-react.netlify.app/) and get any sports e
 - Sort products based on price.
 - Cart Management Page
 - Wishlist Management Page
+- Dark mode
+- Fully responsive
 
 <br />
 
