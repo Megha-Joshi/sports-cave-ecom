@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Filter } from "../Filter/filter";
 import { useFilter } from "../../Context/filterContext";
-import { Navbar } from "../Navbar/navbar";
 import { useProduct } from "../../Context/productsContext";
 import { useAuth } from "../../Context/authContext";
+import { NavbarResp } from "../Navbar/navbarResp";
 
 const Products = () => {
 
@@ -86,9 +86,11 @@ return showData.filter(
     }
     return (
     <div className="App">
-        <Navbar />
+        <NavbarResp />
         <div class="page-container">
+            <div className="filter-section-hide">
             <Filter />
+            </div>
             <div class="product-container">
                 <h1 class="title">Showing All Products</h1>
                 <div class="product-card-container">
